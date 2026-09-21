@@ -39,8 +39,8 @@ em.accent{ font-style:italic; font-weight:380; }
 nav{ height:104px; display:flex; align-items:center; justify-content:space-between; }
 nav img.logo{ height:46px; width:auto; }
 nav .links{ display:flex; gap:38px; align-items:center; font-size:15px; font-weight:500; color:var(--sage-ink); }
-nav .links span{ cursor:default; }
-.btn{ display:inline-block; background:var(--sage-deep); color:var(--cream2); padding:15px 30px; border-radius:999px; font-size:15px; font-weight:600; letter-spacing:.02em; }
+nav .links a{ color:inherit; text-decoration:none; }
+.btn{ display:inline-block; text-decoration:none; background:var(--sage-deep); color:var(--cream2); padding:15px 30px; border-radius:999px; font-size:15px; font-weight:600; letter-spacing:.02em; }
 .btn.ghost{ background:transparent; color:var(--sage-ink); box-shadow:inset 0 0 0 1.5px var(--sage); }
 
 /* hero */
@@ -51,7 +51,7 @@ nav .links span{ cursor:default; }
 .hero h1 em{ color:var(--sage-deep); }
 .hero p.tag{ font-family:'Fraunces',serif; font-style:italic; font-size:19px; color:var(--ink-soft); margin-bottom:44px; }
 .hero .cta{ display:flex; gap:18px; align-items:center; }
-.hero .under{ font-size:15px; font-weight:600; color:var(--sage-ink); border-bottom:1.5px solid var(--sage); padding-bottom:3px; }
+.hero .under{ font-size:15px; text-decoration:none; font-weight:600; color:var(--sage-ink); border-bottom:1.5px solid var(--sage); padding-bottom:3px; }
 .arch{ border-radius:999px 999px 28px 28px; overflow:hidden; }
 .hero-img{ height:600px; box-shadow:0 30px 60px -20px rgba(72,84,63,.35); position:relative; }
 .hero-img img{ width:100%; height:100%; object-fit:cover; }
@@ -82,7 +82,7 @@ section{ padding:110px 0; }
 .card:nth-child(3) .chip{ background:var(--rose); color:#96604A; }
 .card h3{ font-size:27px; margin-bottom:12px; }
 .card p{ font-size:15.5px; color:var(--ink-soft); margin-bottom:22px; }
-.card .more{ font-size:15px; font-weight:600; color:var(--sage-deep); }
+.card .more{ font-size:15px; text-decoration:none; font-weight:600; color:var(--sage-deep); }
 .card .more::after{ content:' →'; }
 
 /* about */
@@ -101,7 +101,17 @@ section{ padding:110px 0; }
 .ep .num{ width:54px; height:54px; border-radius:50%; background:var(--sage-soft); color:var(--sage-ink); font-family:'Fraunces',serif; font-size:20px; display:flex; align-items:center; justify-content:center; }
 .ep h3{ font-size:23px; margin-bottom:6px; }
 .ep .meta{ font-size:13.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; }
-.ep .play{ font-size:14.5px; font-weight:600; color:var(--sage-deep); border:1.5px solid var(--sage); border-radius:999px; padding:10px 22px; }
+.ep .play{ font-size:14.5px; text-decoration:none; font-weight:600; color:var(--sage-deep); border:1.5px solid var(--sage); border-radius:999px; padding:10px 22px; }
+
+/* testimonials */
+.testimonials{ background:var(--cream2); border-top:1.5px dashed var(--hair); }
+.testimonial-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:34px; max-width:920px; margin:0 auto; }
+.testimonial{ background:var(--card); border-radius:26px; padding:26px; box-shadow:0 22px 44px -22px rgba(140,72,26,.18); }
+.testimonial-thumb{ position:relative; border-radius:18px; overflow:hidden; background:#2f261f; aspect-ratio:16/9; }
+.testimonial-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.testimonial-thumb .play-overlay{ position:absolute; left:18px; bottom:18px; background:var(--cream2); color:var(--sage-ink); border-radius:999px; padding:10px 18px; font-size:14px; font-weight:600; text-decoration:none; box-shadow:0 8px 20px rgba(63,49,34,.2); }
+.testimonial h3{ font-size:23px; margin:20px 0 6px; }
+.testimonial p{ color:var(--ink-soft); font-size:15px; }
 
 /* newsletter */
 .news .panel{ background:var(--sage-deep); border-radius:30px; padding:86px 90px; display:grid; grid-template-columns:1.1fr 1fr; gap:70px; align-items:center; position:relative; }
@@ -118,6 +128,7 @@ footer{ padding:80px 0 60px; text-align:center; }
 footer img.logo{ height:54px; margin-bottom:20px; }
 footer p.tag{ font-family:'Fraunces',serif; font-style:italic; font-size:15.5px; color:var(--ink-soft); margin-bottom:34px; }
 footer .links{ display:flex; gap:34px; justify-content:center; font-size:14px; font-weight:600; color:var(--sage-ink); margin-bottom:40px; }
+footer .links a{ color:inherit; text-decoration:none; }
 footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
 .wave{ display:block; width:100%; height:60px; margin-bottom:-1px; }
 /* mobile */
@@ -149,6 +160,7 @@ footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
   .ep h3{ font-size:18px; }
   .ep .meta{ font-size:11.5px; }
   .ep .play{ padding:8px 16px; font-size:13px; }
+  .testimonial-grid{ grid-template-columns:1fr; }
   .news .panel{ grid-template-columns:1fr; gap:36px; padding:54px 30px; }
   .news h2{ font-size:32px; }
   .news .form{ flex-direction:column; }
@@ -157,14 +169,21 @@ footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
 }
 
 </style>
+<script>
+/* Replace this one value with the Cal.com 30-minute booking URL when it is ready. */
+const COACHING_URL = "mailto:kacy@motherhoodmadeyours.com?subject=Motherhood%20Made%20Yours%20coaching";
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-coaching-link]").forEach(link => link.href = COACHING_URL);
+});
+</script>
 </head>
 <body>
 
 <nav class="wrap">
   <img class="logo" src="assets/img/logo.png" alt="Motherhood made yours">
   <div class="links">
-    <span>Podcast</span><span>Coaching</span><span>Journal</span><span>About</span>
-    <span class="btn">Work with me</span>
+    <a href="#podcast">Podcast</a><a href="#coaching">Coaching</a><a href="#journal">Journal</a><a href="#about">About</a>
+    <a class="btn" href="mailto:kacy@motherhoodmadeyours.com?subject=Motherhood%20Made%20Yours%20coaching" data-coaching-link>Work with me</a>
   </div>
 </nav>
 
@@ -174,8 +193,8 @@ footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
     <h1>Motherhood that<br>feels like <em>home.</em></h1>
     <p class="tag">For real women ready to choose a more natural, authentic life.</p>
     <div class="cta">
-      <span class="btn">Listen to the podcast</span>
-      <span class="under">Explore coaching</span>
+      <a class="btn" href="#podcast">Listen to the podcast</a>
+      <a class="under" href="#coaching">Explore coaching</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -188,75 +207,124 @@ footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
   <p>Slow mornings, real food, honest mothering,<br> and <b>permission to do it your way.</b></p>
 </div>
 
-<section class="wrap">
+<section class="wrap" id="start">
   <div class="sec-head">
     <div class="eyebrow">Start here</div>
     <h2>Three ways to <em class="accent">settle in</em></h2>
   </div>
   <div class="cards">
-    <div class="card">
+    <div class="card" id="podcast">
       <div class="img"><img src="assets/img/podcast.jpg" alt="" style="object-position:50% 30%"></div>
       <div class="body">
         <span class="chip">The Podcast</span>
         <h3>Conversations at the kitchen table</h3>
-        <p>Weekly episodes on birth, babies, home and the quiet work of raising a family naturally.</p>
-        <span class="more">Latest episodes</span>
+        <p>Honest conversations about birth, postpartum, intuition, motherhood, healing, and building work around family life.</p>
+        <a class="more" href="https://www.youtube.com/@motherhoodmadeyours" target="_blank" rel="noopener">Visit the YouTube channel</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" id="coaching">
       <div class="img"><img src="assets/img/coaching.jpg" alt="" style="object-position:25% 12%"></div>
       <div class="body">
         <span class="chip">1:1 Coaching</span>
         <h3>Someone in your corner</h3>
-        <p>Gentle, practical support for the season you're in, from first pregnancy to finding yourself again.</p>
-        <span class="more">Book a session</span>
+        <p>Warm, one-to-one support for women choosing a more natural, authentic life, from mothers-to-be to mamas finding their way.</p>
+        <a class="more" href="mailto:kacy@motherhoodmadeyours.com?subject=Motherhood%20Made%20Yours%20coaching" data-coaching-link>Ask about coaching</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" id="journal">
       <div class="img"><img src="assets/img/journal.jpg" alt="" style="object-position:50% 12%"></div>
       <div class="body">
         <span class="chip">The Journal</span>
-        <h3>Notes from the homestead</h3>
-        <p>Recipes, rhythms and reflections for a slower home. Sourdough starts included.</p>
-        <span class="more">Read the journal</span>
+        <h3>Stories for the season you are in</h3>
+        <p>Weekly writing on slow living, consciousness, healing, birth, babies, marriage, and the inner work.</p>
+        <span class="more">First story coming soon</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="about">
+<section class="about" id="about">
   <div class="wrap">
     <div class="arch"><img src="assets/img/about.jpg" alt="" style="object-position:50% 35%"></div>
     <div>
       <div class="eyebrow">Meet Kacy</div>
-      <h2>Hey, I'm Kacy. Mama,<br>gardener, and your<br><em class="accent">biggest cheerleader.</em></h2>
-      <p>Five years ago I traded the highlight reel for a slower, more honest way of raising my babies, and I haven't looked back. Around here we grow what we can, cook what we grow, and give ourselves grace for the rest.</p>
-      <p>Motherhood Made Yours is the corner of the internet I wish I'd had: no scripts, no shame, just real women figuring out what a natural, authentic life looks like in their own homes.</p>
+      <h2>Hey, I'm Kacy. Coach,<br>writer, mama, and your<br><em class="accent">biggest cheerleader.</em></h2>
+      <p>Nearly a decade ago, I walked away from a medical career to follow my heart. It was scary, and it was right. Since then, I've had the honour of sitting with women who are choosing a more natural, authentic life.</p>
+      <p>This is my kitchen table. Slow living. Consciousness. Healing. Birth, babies, marriage, and the inner work. If you're learning to trust yourself, pull up a chair. You belong here.</p>
       <div class="sig">xo, Kacy</div>
     </div>
   </div>
 </section>
 
-<section class="episodes wrap">
+<section class="episodes wrap" id="episodes">
   <div class="sec-head">
-    <div class="eyebrow">Fresh from the mic</div>
-    <h2>Latest <em class="accent">episodes</em></h2>
+    <div class="eyebrow">The podcast</div>
+    <h2>Conversations that feel like a <em class="accent">kitchen table</em></h2>
+    <p class="sub">Warm, unhurried conversations are coming soon. Until then, meet Kacy and explore the videos already on the MMY channel.</p>
   </div>
-  <div class="list">
-    <div class="ep">
-      <div class="num">42</div>
-      <div><h3>What "natural" actually means in our house</h3><div class="meta">38 min · Solo episode</div></div>
-      <span class="play">Listen</span>
+  <div style="text-align:center"><a class="btn" href="https://www.youtube.com/@motherhoodmadeyours" target="_blank" rel="noopener">Visit Motherhood Made Yours on YouTube</a></div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Kind words</div>
+      <h2>From women Kacy has <em class="accent">supported</em></h2>
+      <p class="sub">A few words from past coaching clients.</p>
     </div>
-    <div class="ep">
-      <div class="num">41</div>
-      <div><h3>Homestead rhythms with littles underfoot</h3><div class="meta">46 min · with June Parker</div></div>
-      <span class="play">Listen</span>
-    </div>
-    <div class="ep">
-      <div class="num">40</div>
-      <div><h3>Choosing yourself without the guilt</h3><div class="meta">34 min · Solo episode</div></div>
-      <span class="play">Listen</span>
+    <div class="testimonial-grid">
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/anna.jpg" alt="Anna, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Anna</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/kathryne-muller.jpg" alt="Kathryne Muller, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Kathryne Muller</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/helia.jpg" alt="Helia, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Helia</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/mariam-aziz.jpg" alt="Mariam Aziz, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Mariam Aziz</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/jennifer-muscatel.jpg" alt="Jennifer Muscatel, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Jennifer Muscatel</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/amy-kochek.jpg" alt="Amy Kochek, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Amy Kochek</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/jennifer-reed.jpg" alt="Jennifer Reed, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Jennifer Reed</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/laura-magnifico.jpg" alt="Laura Magnifico, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Laura Magnifico</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/eden-mejia.jpg" alt="Eden Mejia, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Eden Mejia</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/amy-kochek-2.jpg" alt="Amy Kochek, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Amy Kochek</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/abby-kochek.jpg" alt="Abby Kochek, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Abby Kochek</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/karla.jpg" alt="Karla, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Karla</h3><p>Past coaching client</p>
+      </article>
+      <article class="testimonial">
+        <div class="testimonial-thumb"><img src="assets/testimonials/chrissy-boyce.jpg" alt="Chrissy Boyce, past coaching client"><span class="play-overlay">Video coming soon</span></div>
+        <h3>Chrissy Boyce</h3><p>Past coaching client</p>
+      </article>
     </div>
   </div>
 </section>
@@ -264,12 +332,11 @@ footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
 <section class="news wrap" style="padding-top:0;">
   <div class="panel">
     <div>
-      <h2>Letters from<br>the <em class="accent">homestead</em></h2>
-      <p>One honest letter a week: what I'm cooking, growing, and learning as a mama. No noise, ever.</p>
+      <h2>Come sit at<br>the <em class="accent">kitchen table</em></h2>
+      <p>Weekly writing and new podcast conversations will live here. The email list is being set up now.</p>
     </div>
     <div class="form">
-      <span class="input">Your email address</span>
-      <span class="go">Join free</span>
+      <a class="go" href="https://www.youtube.com/@motherhoodmadeyours" target="_blank" rel="noopener">Follow on YouTube for now</a>
     </div>
   </div>
 </section>
@@ -277,7 +344,7 @@ footer .fine{ font-size:12.5px; color:#B39B7E; letter-spacing:.06em; }
 <footer>
   <img class="logo" src="assets/img/logo.png" alt="Motherhood made yours">
   <p class="tag">For real women ready to choose a more natural, authentic life.</p>
-  <div class="links"><span>Podcast</span><span>Coaching</span><span>Journal</span><span>About</span><span>Instagram</span><span>Contact</span></div>
+  <div class="links"><a href="#podcast">Podcast</a><a href="#coaching">Coaching</a><a href="#journal">Journal</a><a href="#about">About</a><a href="#testimonials">Testimonials</a><a href="https://www.youtube.com/@motherhoodmadeyours" target="_blank" rel="noopener">YouTube</a><a href="mailto:kacy@motherhoodmadeyours.com">Contact</a></div>
   <div class="fine">© 2026 Motherhood Made Yours · Made slowly, at home</div>
 </footer>
 
