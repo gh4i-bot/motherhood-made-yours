@@ -181,10 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-coaching-link]").forEach(link => link.href = COACHING_URL);
 });
 </script>
-</head>
+<link as="image" fetchpriority="high" href="assets/img/hero.webp" rel="preload" type="image/webp"/></head>
 <body>
 <nav class="wrap">
-<img alt="Motherhood made yours" class="logo" src="assets/img/logo.png"/>
+<img alt="Motherhood made yours" class="logo" decoding="async" height="288" loading="eager" src="assets/img/logo.png" width="800"/>
 <div class="links"><a href="#about">The Journey</a><a href="coaching.html">Coaching</a><a href="#journal">Letters</a><a href="#podcast">Podcast</a><a class="btn" href="https://cal.com/kacy/alignment-chat">Book a chat</a></div>
 </nav>
 <header class="hero wrap">
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 <div class="hero-visual">
-<div class="hero-img arch"><img alt="" src="assets/img/hero.jpg" style="object-position:50% 32%"/></div>
+<div class="hero-img arch"><img alt="" decoding="async" fetchpriority="high" height="1062" loading="eager" src="assets/img/hero.webp" style="object-position:50% 32%" width="1000"/></div>
 <div class="badge">you're doing<br/>great, mama</div>
 </div>
 </header>
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="cards">
 <div class="card" id="podcast">
-<div class="img"><img alt="" src="assets/img/podcast.jpg" style="object-position:50% 30%"/></div>
+<div class="img"><img alt="" decoding="async" height="600" loading="lazy" src="assets/img/podcast.webp" style="object-position:50% 30%" width="900"/></div>
 <div class="body">
 <span class="chip">The Podcast</span>
 <h3>Conversations at the kitchen table</h3>
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 <div class="card" id="coaching">
-<div class="img"><img alt="" src="assets/img/coaching.jpg" style="object-position:25% 12%"/></div>
+<div class="img"><img alt="" decoding="async" height="600" loading="lazy" src="assets/img/coaching.webp" style="object-position:25% 12%" width="900"/></div>
 <div class="body">
 <span class="chip">1:1 Coaching</span>
 <h3>Someone in your corner</h3>
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </div>
 <div class="card" id="journal">
-<div class="img"><img alt="" src="assets/img/journal.jpg" style="object-position:50% 12%"/></div>
+<div class="img"><img alt="" decoding="async" height="600" loading="lazy" src="assets/img/journal.webp" style="object-position:50% 12%" width="900"/></div>
 <div class="body">
 <span class="chip">Letters</span>
 <h3>Stories for the season you are in</h3>
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 <section class="about" id="about">
 <div class="wrap">
-<div class="arch"><img alt="" src="assets/img/about.jpg" style="object-position:50% 35%"/></div>
+<div class="arch"><img alt="" decoding="async" height="1333" loading="lazy" src="assets/img/about.webp" style="object-position:50% 35%" width="1000"/></div>
 <div>
 <div class="eyebrow">Meet Kacy</div>
 <h2>Hey, I'm Kacy. Coach,<br/>writer, mama, and your<br/><em class="accent">biggest cheerleader.</em></h2>
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 </section>
 <footer>
-<img alt="Motherhood made yours" class="logo" src="assets/img/logo.png"/>
+<img alt="Motherhood made yours" class="logo" decoding="async" height="288" loading="lazy" src="assets/img/logo.png" width="800"/>
 <p class="tag">For real women ready to choose a more natural, authentic life.</p>
 <div class="links"><a href="#about">The Journey</a><a href="coaching.html">Coaching</a><a href="#journal">Letters</a><a href="#podcast">Podcast</a><a class="footer-cta" href="https://cal.com/kacy/alignment-chat">Book a chat</a><a href="https://www.youtube.com/@motherhoodmadeyours" rel="noopener" target="_blank">YouTube</a><a href="mailto:kacy@motherhoodmadeyours.com">Contact</a></div>
 <div class="fine">© 2026 Motherhood Made Yours · Made slowly, at home</div>
