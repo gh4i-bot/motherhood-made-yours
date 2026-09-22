@@ -122,6 +122,10 @@ section{ padding:110px 0; }
 .news .input{ flex:1; background:rgba(246,240,227,.14); border:1.5px solid rgba(246,240,227,.4); border-radius:999px; padding:17px 26px; color:#FBEEDC; font-size:15.5px; font-family:'Karla'; }
 .news .input::placeholder{color:#DEAB7F;}
 .news .go{ background:var(--cream2); color:var(--sage-ink); border-radius:999px; padding:17px 30px; font-weight:600; font-size:15px; white-space:nowrap; }
+.news input{ outline:none; }
+.news .input{ min-width:0; }
+.news .go{ border:0; cursor:pointer; font-family:'Karla',sans-serif; }
+.visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
 /* footer */
 footer{ padding:80px 0 60px; text-align:center; }
@@ -268,12 +272,14 @@ document.addEventListener("DOMContentLoaded", () => {
 <section class="news wrap" style="padding-top:0;">
   <div class="panel">
     <div>
-      <h2>Come sit at<br>the <em class="accent">kitchen table</em></h2>
-      <p>Weekly writing and new podcast conversations will live here. The email list is being set up now.</p>
+      <h2>Letters from<br>the <em class="accent">homestead</em></h2>
+      <p>One honest letter a week: what I'm cooking, growing, and learning as a mama. No noise, ever.</p>
     </div>
-    <div class="form">
-      <a class="go" href="https://www.youtube.com/@motherhoodmadeyours" target="_blank" rel="noopener">Follow on YouTube for now</a>
-    </div>
+    <form action="https://buttondown.com/api/emails/embed-subscribe/motherhoodmadeyours" method="post" class="form embeddable-buttondown-form">
+      <label class="visually-hidden" for="bd-email">Enter your email</label>
+      <input class="input" type="email" name="email" id="bd-email" placeholder="Your email address" required>
+      <input class="go" type="submit" value="Join free">
+    </form>
   </div>
 </section>
 
